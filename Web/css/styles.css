@@ -1,0 +1,116 @@
+/********/
+/* Body */
+/********/
+
+body { 
+    background-color:#DDD;
+    font-family:"palatino linotype", palatino, serif;
+    margin: 0;
+         padding: 0;
+    
+
+ }
+
+/*****************/
+/* Header / Menu */
+/*****************/
+
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+ul.topnav li a:hover:not(.active) {background-color: #111;}
+
+ul.topnav li a.active {background-color: #5792FF;}
+
+ul.topnav li.right {float: right;}
+
+@media screen and (max-width: 600px){
+    ul.topnav li.right, 
+    ul.topnav li {float: none;}
+}
+
+/*****************************/
+/* index.php / chapitres.php */
+/*****************************/
+
+#text {
+    width: 70%;
+    margin: auto;
+    background-color: #EDF4FF;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+/**************************/
+/* header / quiSuisJe.php */
+/**************************/
+
+#top {
+    margin-top: 110px;
+}
+
+#top, #para-top {
+    text-align: center;
+    letter-spacing: 0.12em;
+    padding: 15px 5px 5px 5px;
+    margin: 15px auto 15px auto;
+    width: 85%;
+    border-radius: 5px;
+}
+
+.picture {
+    padding-bottom: 35px;
+
+}
+
+/***********************/
+/* Section / admin.php */
+/***********************/
+
+table, td {
+        border: 1px solid black;
+      }
+      
+      table {
+        margin:auto;
+        text-align: center;
+        border-collapse: collapse;
+      }
+      
+      td {
+        padding: 3px;
+      }
+
+/****************************************/
+/* Section / inscripction_Connexion.php */
+/****************************************/
+
+
+
+/**********/
+/* Footer */
+/**********/
+
+footer{
+    margin-top: 10px;
+	padding:1px 0px;
+	background-color:#333;;
+	text-align:center;
+    color: white;
+    position: absolute; bottom: auto; left: 0; right: 0;
+}
