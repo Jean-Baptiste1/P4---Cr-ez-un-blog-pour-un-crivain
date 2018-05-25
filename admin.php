@@ -1,3 +1,10 @@
+<?php
+if (isset($_POST['nom']) AND $_POST['nom'] == "Jean" && ($_POST['mot_de_passe']) AND $_POST['mot_de_passe'] == "Forteroche")
+// Si le mot de passe est bon
+{
+// On affiche les codes
+?>
+
 <?php $content = ob_start();
 
 require 'lib/autoload.php';
@@ -53,8 +60,6 @@ if (isset($_POST['auteur']))
   </head>
   
   <body>
-    <p><a href=".">Accéder à l'accueil du site</a></p>
-    
     <form action="admin.php" method="post">
       <p style="text-align: center">
 <?php
@@ -103,7 +108,17 @@ foreach ($manager->getList() as $news)
   </body>
 </html>
 
+
 <?php $content = ob_get_clean(); ?>
 
 
 <?php require('App/Frontend/Templates/template.php'); ?>
+
+<?php
+}
+else // Sinon, on affiche un message d'erreur
+{
+echo '<p>Mot de passe incorrect</p>';
+echo '<a href="Connexion.php">Retour</a>';
+}
+?>
