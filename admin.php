@@ -1,15 +1,14 @@
 <?php session_start();
 
-$_SESSION['nom'] = $_POST['nom'];
+if (isset($_POST['nom'])) $_SESSION['nom'] = $_POST['nom'];
+if (isset($_POST['mot_de_passe'])) $_SESSION['mot_de_passe'] = $_POST['mot_de_passe'];
 
-$_SESSION['mot_de_passe'] = $_POST['mot_de_passe'];
-
-if (isset($_POST['nom']) AND $_POST['nom'] == "Jean" && $_POST['mot_de_passe'] AND $_POST['mot_de_passe'] == "Forteroche")
+if ((isset($_SESSION['nom'])) AND $_SESSION['nom'] == "a" AND (isset($_SESSION['mot_de_passe'])) AND $_SESSION['mot_de_passe'] == "a")
 // Si le mot de passe est bon
 
 {
 var_dump($_SESSION);
-
+    
 $content = ob_start();
 
 require 'lib/autoload.php';
@@ -116,7 +115,9 @@ foreach ($manager->getList() as $news)
 <?php $content = ob_get_clean();
 
 require 'App/Backend/Templates/template.php';
-
+    
+$_SESSION = array();
+    
 }
 else // Sinon, on affiche un message d'erreur
 {

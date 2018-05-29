@@ -1,4 +1,5 @@
 <?php session_start(); ?>
+
 <div class="container">
     	<h1 class="jumbotron">Connexion</h1>
 
@@ -7,8 +8,8 @@
 		<!-- Formulaire de connexion-->
 <form action="admin.php" method="post" class="col-md-6" id="connexion" novalidate="novalidate">
     
-    <?php var_dump($_SESSION);?>
-    
+    <?php var_dump($_SESSION); ?>
+ 
 	<h2>Connexion</h2>
 
 	<div class="form-group">
