@@ -56,6 +56,13 @@ ul.topnav li.right {float: right;}
     padding: 5px;
 }
 
+[class*="col"] {
+        margin-bottom: 20px;
+    }
+
+    img {
+        width: 100%;
+    }
 /**************************/
 /* header / quiSuisJe.php */
 /**************************/

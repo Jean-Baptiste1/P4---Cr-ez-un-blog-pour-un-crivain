@@ -1,11 +1,16 @@
-<?php
-if (isset($_POST['nom']) AND $_POST['nom'] == "Jean" && ($_POST['mot_de_passe']) AND $_POST['mot_de_passe'] == "Forteroche")
-// Si le mot de passe est bon
-{
-// On affiche les codes
-?>
+<?php session_start();
 
-<?php $content = ob_start();
+$_SESSION['nom'] = $_POST['nom'];
+
+$_SESSION['mot_de_passe'] = $_POST['mot_de_passe'];
+
+if (isset($_POST['nom']) AND $_POST['nom'] == "Jean" && $_POST['mot_de_passe'] AND $_POST['mot_de_passe'] == "Forteroche")
+// Si le mot de passe est bon
+
+{
+var_dump($_SESSION);
+
+$content = ob_start();
 
 require 'lib/autoload.php';
 
@@ -52,12 +57,12 @@ if (isset($_POST['auteur']))
 ?>
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Administration</title>
-    <meta charset="utf-8" />
-    
-    
-  </head>
+    <head>
+        <title>
+            Administration
+        </title>
+        <meta charset="utf-8" />
+    </head>
   
   <body>
     <form action="admin.php" method="post">
@@ -108,13 +113,10 @@ foreach ($manager->getList() as $news)
   </body>
 </html>
 
+<?php $content = ob_get_clean();
 
-<?php $content = ob_get_clean(); ?>
+require 'App/Backend/Templates/template.php';
 
-
-<?php require('App/Frontend/Templates/template.php'); ?>
-
-<?php
 }
 else // Sinon, on affiche un message d'erreur
 {
